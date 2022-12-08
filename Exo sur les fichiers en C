@@ -1,0 +1,23 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <conio.h>
+#include <math.h>
+#include <iostream>
+
+int main(void)
+{
+	FILE *fic = fopen("abc.txt", "r");
+	int lettre = 0;
+	if (fic == NULL)
+		exit(1);
+	lettre = fgetc(fic);
+	printf("%c\n", lettre);
+
+	lettre = fgetc(fic);
+	printf("%c\n", lettre);
+	fclose(fic);
+	return 0;
+}
