@@ -6,18 +6,59 @@
 #include <conio.h>
 #include <math.h>
 #include <iostream>
-
+/*exo1*//*
 int main(void)
 {
-	FILE *fic = fopen("abc.txt", "r");
-	int lettre = 0;
+	FILE *fic = fopen("alphab.txt", "w+");
 	if (fic == NULL)
 		exit(1);
-	lettre = fgetc(fic);
-	printf("%c\n", lettre);
-
-	lettre = fgetc(fic);
-	printf("%c\n", lettre);
+	fputs("a,b,c", fic);
+	
 	fclose(fic);
+	
+	return 0;
+}
+*/
+/*exo2*//*
+int main(int argc, char ** argv)
+{
+	FILE* fichier = fopen("./exo2.txt", "r");
+
+	if (fichier != NULL)
+	{
+		// L'ouverture du fichier a réussie.
+
+		char c;
+
+		do {
+
+			c = (char)getc(fichier);
+
+			printf("%c", c);
+
+		} while (c != EOF);
+
+
+		printf("\n");
+
+
+		if (fclose(fichier) == 0) {
+
+			printf("Fermeture reussie\n");
+		}
+		else {
+
+			printf("Echec de fermeture du fichier \n");
+		}
+
+		fclose(fichier);
+	}
+
+	else {
+
+		printf("L'ouverture du fichier a echouee !\n");
+
+	}
+
 	return 0;
 }
