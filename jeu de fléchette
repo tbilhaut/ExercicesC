@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <conio.h>
+#include <math.h>
+#include <iostream>
+
+int main()
+{
+	/*int tab[10];
+	int nombreAleatoire = 0;
+	const int MAX = 20, MIN = 0;
+	srand(time(NULL));
+	nombreAleatoire = (rand() % (MAX - MIN + 1)) + MIN;
+	printf("Le nombre aleatoire entre 1 et 20 est %d", nombreAleatoire);*/
+	char joueur1 [10];
+	char joueur2 [10];
+	printf("\n----------Jeu de flechette---------- \n2 joueurs\n");
+	printf("prenom du Joueur1 :");
+	scanf("%s", &joueur1);
+	printf("Le Prenom du joueur num 1 est bien : %s\n\n", joueur1);
+	printf("prenom du Joueur2 :");
+	scanf("%s", &joueur2);
+	printf("Le Prenom du joueur num 2 est bien : %s", joueur2);
+	/*printf("\n\n%s lance et tire bull triple, puis bull simple puis 17.", joueur1);*/
+	int test3;
+	int test2;
+	int test1;
+	int i;
+	char prout = 'bull';
+	srand(time(NULL));
+	test1 = (rand() % (22 - 15)) + 15;
+	test2 = (rand() % (22 - 15)) + 15;
+	test3 = (rand() % (22 - 15)) + 15;
+	
+	printf("\ntest=%d\n", test1);
+	
+	if(test1 == 21) {
+		
+		printf("\n\n%s lance et tire %s triple, puis %d simple puis %d.", joueur1, prout, test2, test3);
+	}
+	else {
+		printf("\n\n%s lance et tire %d triple, puis %d simple puis %d.", joueur1, test1, test2, test3);
+	}
+	
+	
+		printf("\n%d\n%d\n%d", test1, test2, test3);
+		
+	
+}
