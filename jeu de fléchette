@@ -27,6 +27,9 @@ int main()
 	scanf("%s", &joueur2);
 	printf("Le Prenom du joueur num 2 est bien : %s", joueur2);
 	/*printf("\n\n%s lance et tire bull triple, puis bull simple puis 17.", joueur1);*/
+	int test6;
+	int test5;
+	int test4;
 	int test3;
 	int test2;
 	int test1;
@@ -36,29 +39,55 @@ int main()
 	test1 = (rand() % (22 - 15)) + 15;
 	test2 = (rand() % (22 - 15)) + 15;
 	test3 = (rand() % (22 - 15)) + 15;
+	test3 = (rand() % (22 - 15)) + 15;
+	test4 = (rand() % (4 - 0)) + 0;
+	test5 = (rand() % (4 - 0)) + 0;
+	test6 = (rand() % (4 - 0)) + 0;
 	
 	printf("\ntest=%d\n", test1);
-	
-	if(test1 == 21) {
+	if (test1 != 21) {
+	if (test1 != 21 && test2 != 21 && test3 != 21) {
+		printf("\n\n%s lance et tire %dx%d, puis %dx%d simple puis %dx%d.", joueur1, test1, test4, test2, test5, test3, test6);
+		printf("score : %d *= %d", test1, test4);
+	}
 
-		printf("\n\n%s lance et tire bull triple, puis %d simple puis %d.", joueur1, test2, test3);
 	}
-	else if (test1 != 21) {
-	printf("\n\n%s lance et tire %d triple, puis %d simple puis %d.", joueur1, test1, test2, test3);
+	if (test1 == 21) {
+		if (test1 == 21 && test2 != 21 && test3 != 21) {
+
+			printf("\n\n%s lance et tire bull triple, puis %d simple puis %d.", joueur1, test2, test3);
+		}
+		
+		else if (test1 == 21 && test2 == 21 && test3 != 21)
+		{
+			printf("\n\n%s lance et tire bull triple, puis bull simple puis %d.", joueur1, test3);
+		}
+		else if (test1 == 21 && test2 != 21 && test3 == 21) {
+			printf("\n\n%s lance et tire bull triple, puis %d simple puis bull.", joueur1, test2);
+		}
+		else
+		{
+			printf("\n\n%s lance et tire bull triple, puis bull simple puis bull.", joueur1);
+		}
 	}
-	else if (test1 == 21 || test2 == 21)
-	{
-		printf("\n\n%s lance et tire bull triple, puis bull simple puis %d.", joueur1, test3);
+	else {
+		if (test1 != 21 && test2 == 21 && test3 != 21) {
+
+			printf("\n\n%s lance et tire %d triple, puis bull simple puis %d.", joueur1, test1, test3);
+		}
+		else if (test1 != 21 && test2 == 21 && test3 == 21) {
+			printf("\n\n%s lance et tire %d triple, puis bull simple puis bull.", joueur1, test1);
+		}
+		else if (test1 != 21 && test2 != 21 && test3 == 21) {
+			printf("\n\n%s lance et tire %d triple, puis %d simple puis bull.", joueur1, test1, test2);
+		}
+		
 	}
-	else if (test1 == 21 && test2 == 21 || test3 == 21)
-	{
-		printf("\n\n%s lance et tire bull triple, puis bull simple puis bull.", joueur1);
-	}
-	
 	
 	
 	
 		printf("\n%d\n%d\n%d", test1, test2, test3);
+
 	
 	
 }
