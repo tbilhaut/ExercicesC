@@ -11,96 +11,121 @@
 
 int main()
 {
-
-
-
-	char joueur1 [10];
-	char joueur2 [10];
-	printf("\n----------Jeu de flechette---------- \n2 joueurs\n");
-	printf("prenom du Joueur1 :");
-	scanf("%s", &joueur1);
-	printf("Le Prenom du joueur num 1 est bien : %s\n\n", joueur1);
-	printf("prenom du Joueur2 :");
-	scanf("%s", &joueur2);
-	printf("Le Prenom du joueur num 2 est bien : %s", joueur2);
-
 	int test6;
 	int test5;
 	int test4;
 	int test3;
 	int test2;
 	int test1;
-	
+
 	int score1 = 0;
 	int score2 = 0;
 	int score3 = 0;
 	int total = 0;
+	int continuerPartie = 1;
 
 	srand(time(NULL));/*nbr aleatoire*/
-	test1 = (rand() % (17 - 16)) + 16;
-	test2 = (rand() % (16 - 15)) + 15;
-	test3 = (rand() % (18 - 17)) + 17;
+	test1 = (rand() % (22 - 1)) + 1;
+	test2 = (rand() % (25 - 1)) + 1;
+	test3 = (rand() % (22 - 1)) + 1;
 	test4 = (rand() % (4 - 1)) + 1;
 	test5 = (rand() % (4 - 1)) + 1;
 	test6 = (rand() % (4 - 1)) + 1;
 
-	
-	printf("\ntest=%d\n", test1);
-	if (test1 != 21) {/*inerser 21 par bull*/
-	if (test1 != 21 && test2 != 21 && test3 != 21) {
-		printf("\n\n%s lance et tire %dx%d, puis %dx%d puis %dx%d.", joueur1, test1, test4, test2, test5, test3, test6);
-		
-		
-		printf("\ntotal score: %d+%d+%d=%d", score1, score2, score3, total);
-		
-	}
+	while (continuerPartie) {
 
-	}
-	if (test1 == 21) {
-		if (test1 == 21 && test2 != 21 && test3 != 21) {
+		char joueur1[10];
+		char joueur2[10];
+		printf("\n----------Jeu de flechette---------- \n2 joueurs\n");
+		printf("prenom du Joueur1 :");
+		scanf("%s", &joueur1);
+		printf("Le Prenom du joueur num 1 est bien : %s\n\n", joueur1);
+		printf("prenom du Joueur2 :");
+		scanf("%s", &joueur2);
+		printf("Le Prenom du joueur num 2 est bien : %s", joueur2);
 
-			printf("\n\n%s lance et tire bull triple, puis %d simple puis %d.", joueur1, test2, test3);
+
+
+
+		printf("\ntest=%d\n", test1);
+		if (test1 != 21) {/*inerser 21 par bull*/
+			if (test1 != 21 && test2 != 21 && test3 != 21) {
+				printf("\n\n%s lance et tire %dx%d, puis %dx%d puis %dx%d.", joueur1, test1, test4, test2, test5, test3, test6);
+				printf("\n\n%s lance et tire %dx%d, puis %dx%d puis %dx%d.", joueur2, test1, test4, test2, test5, test3, test6);
+			
+			}
+
 		}
-		
-		else if (test1 == 21 && test2 == 21 && test3 != 21)
+		if (test1 == 21) {
+			if (test1 == 21 && test2 != 21 && test3 != 21) {
+
+				printf("\n\n%s lance et tire bull triple, puis %d simple puis %d.", joueur1, test2, test3);
+				printf("\n\n%s lance et tire bull triple, puis %d simple puis %d.\n", joueur2, test2, test3);
+			}
+
+			else if (test1 == 21 && test2 == 21 && test3 != 21)
+			{
+				printf("\n\n%s lance et tire bull triple, puis bull simple puis %d.", joueur1, test3);
+			}
+			else if (test1 == 21 && test2 != 21 && test3 == 21) {
+				printf("\n\n%s lance et tire bull triple, puis %d simple puis bull.", joueur1, test2);
+			}
+			else
+			{
+				printf("\n\n%s lance et tire bull triple, puis bull simple puis bull.", joueur1);
+			}
+		}
+		else {
+			if (test1 != 21 && test2 == 21 && test3 != 21) {
+
+				printf("\n\n%s lance et tire %d triple, puis bull simple puis %d.", joueur1, test1, test3);
+			}
+			else if (test1 != 21 && test2 == 21 && test3 == 21) {
+				printf("\n\n%s lance et tire %d triple, puis bull simple puis bull.", joueur1, test1);
+			}
+			else if (test1 != 21 && test2 != 21 && test3 == 21) {
+				printf("\n\n%s lance et tire %d triple, puis %d simple puis bull.", joueur1, test1, test2);
+			}
+
+
+		}
+		if (test4 == 3)
 		{
-			printf("\n\n%s lance et tire bull triple, puis bull simple puis %d.", joueur1, test3);
+			score1 = test1 * 3;
+			printf("\n\ntotal score: %d*3=%d\n", test1, score1);
 		}
-		else if (test1 == 21 && test2 != 21 && test3 == 21) {
-			printf("\n\n%s lance et tire bull triple, puis %d simple puis bull.", joueur1, test2);
+		else if (test5 == 3) {
+			score2 = test5 * 3;
+			printf("\n\ntotal score: %d*3=%d\n", test5, score2);
 		}
-		else
+
+		if (score1) {/*tableau*/
+			printf("\n bull  20  19  18  17  16  15");
+			printf("\n    0   0   0   0   %d   %d   %d", test6, test5, test4);
+		}
+		else if (test1 == 16 || test2 == 17 || test3 == 15) {
+			printf("\n bull  20  19  18  17  16  15");
+			printf("\n    0   0   0   0   0   3   0", test5, test6, test4);
+		}
+		int tableau
+		struct
 		{
-			printf("\n\n%s lance et tire bull triple, puis bull simple puis bull.", joueur1);
+			tableau[7] = { 15,16,17,18,19,20}
+				tableau[0]
 		}
-	}
-	else {
-		if (test1 != 21 && test2 == 21 && test3 != 21) {
 
-			printf("\n\n%s lance et tire %d triple, puis bull simple puis %d.", joueur1, test1, test3);
-		}
-		else if (test1 != 21 && test2 == 21 && test3 == 21) {
-			printf("\n\n%s lance et tire %d triple, puis bull simple puis bull.", joueur1, test1);
-		}
-		else if (test1 != 21 && test2 != 21 && test3 == 21) {
-			printf("\n\n%s lance et tire %d triple, puis %d simple puis bull.", joueur1, test1, test2);
-		}
-		
-	}
-	score1 = test1 * test4;
 
-	if (score1) {/*tableau*/
-		printf("\n bull  20  19  18  17  16  15");
-		printf("\n    0   0   0   0   %d   %d   %d", test6, test5, test4);	
-	}
-	else if(test1 == 16 || test2 == 17 || test3 == 15) {
-		printf("\n bull  20  19  18  17  16  15");
-		printf("\n    0   0   0   0   0   3   0", test5, test6, test4);
-	}
-	else if (test1 == 16 || test2 == 17 || test3 == 15)
+		printf("\nVoulez vous continuer la partie ?\n\n");
 
-		printf("\n\n%d\n%d\n%d", test1, test2, test3);
-		printf("\n\n%d %d %d", test4, test5, test6);
-	
-	
-}
+		printf("Tapez 1 pour OUI ou 0 pour NON: ");
+
+		scanf("%d", &continuerPartie);
+
+		printf("\n\n");
+	}
+
+
+
+	}
+
+
